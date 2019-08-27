@@ -159,7 +159,7 @@ public class RealWorldDatasets {
 		fail("Not yet implemented");
 	}
 	*/
-	/*
+
 	@Test
 	public void intrusionDetection10Percent() {
 		// The change points in the data are: 2203, 2233, 2241, 2294, 2306,
@@ -167,7 +167,7 @@ public class RealWorldDatasets {
 		// 209611, 209621, 211210, 492000, 492001, 492981, 494001
 		// Normal is in the range of 111042 to 208299
 		// Smurf is in the range of 211210 to 491999
-		path = "Tests/RealWorldData/kddcup99_10_percent_sorted.arff";
+		path = "/home/florian/Dokumente/Master_Informatik/Sem04/MasterThesis/data/StreamHiCS/kddcup99_10_percent_sorted_noise.arff";
 		// Class index is last attribute but not relevant for this task
 		stream = new ArffFileStream(path, -1);
 		
@@ -185,7 +185,7 @@ public class RealWorldDatasets {
 		carryOutTest(numberOfDimensions, m, alpha, epsilon, threshold, cutoff, pruningDifference, horizon, checkCount);
 		System.out.println();
 		}
-		*/
+
 	/*
 	@Test
 	public void intrusionDetection10Percent() {
@@ -425,7 +425,7 @@ public class RealWorldDatasets {
 		
 		PearsonsCorrelation pc = new PearsonsCorrelation();
 		double[][] data = new double[checkCount][numberOfDimensions];
-		String filePath = "D:/Informatik/MSc/IV/Masterarbeit Porto/Results/StreamHiCS/RealWorldData/IntrusionDetection/corr.csv";
+		String filePath = "results/IntrusionDetection/corr.csv";
 		
 		List<String> correlOut = new ArrayList<String>();
 		double overallMinCorrelation = Double.MAX_VALUE;

@@ -66,7 +66,7 @@ public class ConceptDrift_full {
 	}
 
 	private static CSVReader csvReader;
-	private static final String path = "Tests/CovarianceMatrices/";
+	private static final String path = "src/test/resources/ccd/CovarianceMatrices/";
 	private Callback callback = new Callback() {
 		@Override
 		public void onAlarm() {

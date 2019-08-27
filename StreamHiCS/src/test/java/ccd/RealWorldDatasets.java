@@ -113,11 +113,11 @@ public class RealWorldDatasets {
 		switch (dataset) {
 		case COVERTYPE:
 			//path = "Tests/RealWorldData/covertypeNorm_filtered.arff";
-			path = "Tests/RealWorldData/covertypeNorm.arff";
+			path = "src/test/resources/ccd/RealWorldData/covertypeNorm.arff";
 			// Class index is last attribute but not relevant for this task
 			stream = new ArffFileStream(path, -1);
 
-			outputPath = "D:/Informatik/MSc/IV/Masterarbeit Porto/Results/ConceptChangeDetection/RealWorldData/ForestCovertype_Results.txt";
+			outputPath = "results/ForestCovertype_Results.txt";
 			
 			summarisation = StreamSummarisation.CLUSTREE_DEPTHFIRST;
 			buildup = SubspaceBuildup.CONNECTED_COMPONENTS;
@@ -176,11 +176,11 @@ public class RealWorldDatasets {
 			System.out.println("ForestCovertype filtered unsorted");
 			break;
 		case INTRUSIONDETECTION:
-			path = "Tests/RealWorldData/kddcup99_10_percent.arff";
+			path = "src/test/resources/ccd/RealWorldData/kddcup99_10_percent_sorted.arff";
 			// Class index is last attribute but not relevant for this task
 			stream = new ArffFileStream(path, -1);
 
-			outputPath = "D:/Informatik/MSc/IV/Masterarbeit Porto/Results/ConceptChangeDetection/RealWorldData/IntrusionDetection_Results.txt";
+			outputPath = "results/IntrusionDetection_Results.txt";
 			
 			summarisation = StreamSummarisation.RADIUSCENTROIDS;
 			buildup = SubspaceBuildup.CONNECTED_COMPONENTS;
@@ -226,11 +226,11 @@ public class RealWorldDatasets {
 
 			break;
 		case ELECTRICITY:
-			path = "Tests/RealWorldData/elecNormNew_unsorted.arff";
+			path = "src/test/resources/ccd/RealWorldData/elecNormNew_unsorted.arff";
 			// Class index is last attribute but not relevant for this task
 			stream = new ArffFileStream(path, -1);
 
-			outputPath = "D:/Informatik/MSc/IV/Masterarbeit Porto/Results/ConceptChangeDetection/RealWorldData/Electricity_Results.txt";
+			outputPath = "results/Electricity_Results.txt";
 			
 			summarisation = StreamSummarisation.RADIUSCENTROIDS;
 			buildup = SubspaceBuildup.CONNECTED_COMPONENTS;
@@ -609,7 +609,7 @@ public class RealWorldDatasets {
 					+ ", " + refClassifierSmoothedErrorRates[i]);
 		}
 
-		String filePath = "C:/Users/Vincent/Desktop/ErrorRates.csv";
+		String filePath = "results/realworlddatasets/ErrorRates.csv";
 
 		try {
 			Files.write(Paths.get(filePath), errorRatesList);

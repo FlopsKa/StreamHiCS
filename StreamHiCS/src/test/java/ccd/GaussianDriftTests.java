@@ -61,7 +61,6 @@ public class GaussianDriftTests {
 	private String summarisationDescription = null;
 	private String builderDescription = null;
 	private static CSVReader csvReader;
-	private static final String path = "Tests/CovarianceMatrices/";
 	private SubspaceChangeDetectors scd;
 	private SubspaceClassifiersChangeDetector sccd;
 	private FullSpaceChangeDetector refDetector;
@@ -121,13 +120,17 @@ public class GaussianDriftTests {
 							radius = 1;
 							numberOfDimensions = 5;
 							numInstances = 20000;
-							GaussianStream s1 = new GaussianStream(null, csvReader.read(path + "Test2.csv"), 0.5);
+							GaussianStream s1 = new GaussianStream(null, csvReader.read(fromClasspath("Test2.csv")),
+									0.5);
 
-							GaussianStream s2 = new GaussianStream(null, csvReader.read(path + "Test2.csv"), 1.0);
+							GaussianStream s2 = new GaussianStream(null, csvReader.read(fromClasspath("Test2.csv")),
+									1.0);
 
-							GaussianStream s3 = new GaussianStream(null, csvReader.read(path + "Test2.csv"), 1.5);
+							GaussianStream s3 = new GaussianStream(null, csvReader.read(fromClasspath("Test2.csv")),
+									1.5);
 
-							GaussianStream s4 = new GaussianStream(null, csvReader.read(path + "Test2.csv"), 2.0);
+							GaussianStream s4 = new GaussianStream(null, csvReader.read(fromClasspath("Test2.csv")),
+									2.0);
 
 							ConceptDriftStream conceptDriftStream1 = new ConceptDriftStream();
 							conceptDriftStream1.streamOption.setCurrentObject(s1);
@@ -152,7 +155,7 @@ public class GaussianDriftTests {
 							conceptDriftStream.widthOption.setValue(1000);
 							conceptDriftStream.prepareForUse();
 							trueChanges.add(14500.0);
-							
+
 							trueChangesVirtualD.add(4500.0);
 							trueChangesVirtualD.add(9500.0);
 							trueChangesVirtualD.add(14500.0);
@@ -186,13 +189,13 @@ public class GaussianDriftTests {
 							numberOfDimensions = 5;
 							numInstances = 20000;
 							radius = 1;
-							s1 = new GaussianStream(null, csvReader.read(path + "Test5.csv"), 0.5);
+							s1 = new GaussianStream(null, csvReader.read(fromClasspath("Test5.csv")), 0.5);
 
-							s2 = new GaussianStream(null, csvReader.read(path + "Test5.csv"), 1.0);
+							s2 = new GaussianStream(null, csvReader.read(fromClasspath("Test5.csv")), 1.0);
 
-							s3 = new GaussianStream(null, csvReader.read(path + "Test5.csv"), 1.5);
+							s3 = new GaussianStream(null, csvReader.read(fromClasspath("Test5.csv")), 1.5);
 
-							s4 = new GaussianStream(null, csvReader.read(path + "Test5.csv"), 2.0);
+							s4 = new GaussianStream(null, csvReader.read(fromClasspath("Test5.csv")), 2.0);
 
 							// s5 = new GaussianStream(null, csvReader.read(path
 							// + "Test5.csv"), 1.0);
@@ -255,17 +258,19 @@ public class GaussianDriftTests {
 							numberOfDimensions = 5;
 							numInstances = 30000;
 							radius = 1;
-							s1 = new GaussianStream(null, csvReader.read(path + "Test1.csv"), 0.5);
+							s1 = new GaussianStream(null, csvReader.read(fromClasspath("Test1.csv")), 0.5);
 
-							s2 = new GaussianStream(null, csvReader.read(path + "Test2.csv"), 0.5);
+							s2 = new GaussianStream(null, csvReader.read(fromClasspath("Test2.csv")), 0.5);
 
-							s3 = new GaussianStream(null, csvReader.read(path + "Test2.csv"), 1.0);
+							s3 = new GaussianStream(null, csvReader.read(fromClasspath("Test2.csv")), 1.0);
 
-							s4 = new GaussianStream(null, csvReader.read(path + "Test12.csv"), 1.0);
+							s4 = new GaussianStream(null, csvReader.read(fromClasspath("Test12.csv")), 1.0);
 
-							GaussianStream s5 = new GaussianStream(null, csvReader.read(path + "Test12.csv"), 1.5);
+							GaussianStream s5 = new GaussianStream(null, csvReader.read(fromClasspath("Test12.csv")),
+									1.5);
 
-							GaussianStream s6 = new GaussianStream(null, csvReader.read(path + "Test13.csv"), 2.0);
+							GaussianStream s6 = new GaussianStream(null, csvReader.read(fromClasspath("Test13.csv")),
+									2.0);
 
 							conceptDriftStream1 = new ConceptDriftStream();
 							conceptDriftStream1.streamOption.setCurrentObject(s1);
@@ -306,7 +311,7 @@ public class GaussianDriftTests {
 							conceptDriftStream.widthOption.setValue(1000);
 							conceptDriftStream.prepareForUse();
 							trueChanges.add(24500.0);
-							
+
 							trueChangesVirtualD.add(4500.0);
 							trueChangesVirtualD.add(9500.0);
 							trueChangesVirtualD.add(14500.0);
@@ -344,15 +349,15 @@ public class GaussianDriftTests {
 							numberOfDimensions = 10;
 							numInstances = 25000;
 							radius = 1.5;
-							s1 = new GaussianStream(null, csvReader.read(path + "Test25.csv"), 0.5);
+							s1 = new GaussianStream(null, csvReader.read(fromClasspath("Test25.csv")), 0.5);
 
-							s2 = new GaussianStream(null, csvReader.read(path + "Test25.csv"), 1.5);
+							s2 = new GaussianStream(null, csvReader.read(fromClasspath("Test25.csv")), 1.5);
 
-							s3 = new GaussianStream(null, csvReader.read(path + "Test25.csv"), 2.5);
+							s3 = new GaussianStream(null, csvReader.read(fromClasspath("Test25.csv")), 2.5);
 
-							s4 = new GaussianStream(null, csvReader.read(path + "Test25.csv"), 3.5);
+							s4 = new GaussianStream(null, csvReader.read(fromClasspath("Test25.csv")), 3.5);
 
-							s5 = new GaussianStream(null, csvReader.read(path + "Test25.csv"), 4.5);
+							s5 = new GaussianStream(null, csvReader.read(fromClasspath("Test25.csv")), 4.5);
 
 							conceptDriftStream1 = new ConceptDriftStream();
 							conceptDriftStream1.streamOption.setCurrentObject(s1);
@@ -422,21 +427,23 @@ public class GaussianDriftTests {
 							numInstances = 40000;
 							epsilon = 0.15;
 							radius = 1.5;
-							s1 = new GaussianStream(null, csvReader.read(path + "Test24.csv"), 0.5);
+							s1 = new GaussianStream(null, csvReader.read(fromClasspath("CovarianceMatrices/Test24.csv")), 0.5);
 
-							s2 = new GaussianStream(null, csvReader.read(path + "Test24.csv"), 0.9);
+							s2 = new GaussianStream(null, csvReader.read(fromClasspath("CovarianceMatrices/Test24.csv")), 0.9);
 
-							s3 = new GaussianStream(null, csvReader.read(path + "Test25.csv"), 0.9);
+							s3 = new GaussianStream(null, csvReader.read(fromClasspath("CovarianceMatrices/Test25.csv")), 0.9);
 
-							s4 = new GaussianStream(null, csvReader.read(path + "Test25.csv"), 1.2);
+							s4 = new GaussianStream(null, csvReader.read(fromClasspath("CovarianceMatrices/Test25.csv")), 1.2);
 
-							s5 = new GaussianStream(null, csvReader.read(path + "Test25.csv"), 1.5);
+							s5 = new GaussianStream(null, csvReader.read(fromClasspath("CovarianceMatrices/Test25.csv")), 1.5);
 
-							s6 = new GaussianStream(null, csvReader.read(path + "Test26.csv"), 1.5);
+							s6 = new GaussianStream(null, csvReader.read(fromClasspath("CovarianceMatrices/Test26.csv")), 1.5);
 
-							GaussianStream s7 = new GaussianStream(null, csvReader.read(path + "Test26.csv"), 1.8);
+							GaussianStream s7 = new GaussianStream(null, csvReader.read(fromClasspath("CovarianceMatrices/Test26.csv")),
+									1.8);
 
-							GaussianStream s8 = new GaussianStream(null, csvReader.read(path + "Test28.csv"), 1.8);
+							GaussianStream s8 = new GaussianStream(null, csvReader.read(fromClasspath("CovarianceMatrices/Test28.csv")),
+									1.8);
 
 							conceptDriftStream1 = new ConceptDriftStream();
 							conceptDriftStream1.streamOption.setCurrentObject(s1);
@@ -493,7 +500,7 @@ public class GaussianDriftTests {
 							conceptDriftStream.widthOption.setValue(1000);
 							conceptDriftStream.prepareForUse();
 							// trueChanges.add(34500.0);
-							
+
 							trueChangesVirtualD.add(4500.0);
 							trueChangesVirtualD.add(9500.0);
 							trueChangesVirtualD.add(14500.0);
@@ -578,7 +585,7 @@ public class GaussianDriftTests {
 							conceptDriftStream.widthOption.setValue(1000);
 							conceptDriftStream.prepareForUse();
 							trueChanges.add(19500.0);
-							
+
 							trueChangesVirtualD.add(4500.0);
 							trueChangesVirtualD.add(9500.0);
 							trueChangesVirtualD.add(14500.0);
@@ -673,7 +680,7 @@ public class GaussianDriftTests {
 							conceptDriftStream.widthOption.setValue(1000);
 							conceptDriftStream.prepareForUse();
 							trueChanges.add(24500.0);
-							
+
 							trueChangesVirtualD.add(4500.0);
 							trueChangesVirtualD.add(9500.0);
 							trueChangesVirtualD.add(14500.0);
@@ -702,17 +709,17 @@ public class GaussianDriftTests {
 
 						// Creating the SCCD system
 						/*
-						SummarisationAdapter adapter2 = createSummarisationAdapter(summarisation);
-						Contrast contrastEvaluator2 = new Contrast(m, alpha, adapter2);
-						CorrelationSummary correlationSummary2 = new CorrelationSummary(numberOfDimensions, horizon);
-						SubspaceBuilder subspaceBuilder2 = createSubspaceBuilder(buildup, correlationSummary2,
-								contrastEvaluator2);
-						ChangeChecker changeChecker2 = new TimeCountChecker(1000);
-						StreamHiCS streamHiCS2 = new StreamHiCS(epsilon, threshold, pruningDifference,
-								contrastEvaluator2, subspaceBuilder2, changeChecker2, null, correlationSummary2,
-								stopwatch);
-						changeChecker2.setCallback(streamHiCS2);
-						*/
+						 * SummarisationAdapter adapter2 = createSummarisationAdapter(summarisation);
+						 * Contrast contrastEvaluator2 = new Contrast(m, alpha, adapter2);
+						 * CorrelationSummary correlationSummary2 = new
+						 * CorrelationSummary(numberOfDimensions, horizon); SubspaceBuilder
+						 * subspaceBuilder2 = createSubspaceBuilder(buildup, correlationSummary2,
+						 * contrastEvaluator2); ChangeChecker changeChecker2 = new
+						 * TimeCountChecker(1000); StreamHiCS streamHiCS2 = new StreamHiCS(epsilon,
+						 * threshold, pruningDifference, contrastEvaluator2, subspaceBuilder2,
+						 * changeChecker2, null, correlationSummary2, stopwatch);
+						 * changeChecker2.setCallback(streamHiCS2);
+						 */
 						sccd = new SubspaceClassifiersChangeDetector(numberOfDimensions, streamHiCS1);
 						sccd.useRestspaceOption.setValue(true);
 						sccd.initOption.setValue(1000);
@@ -733,7 +740,7 @@ public class GaussianDriftTests {
 						stopwatch.reset();
 						for (int i = 0; i < numberTestRuns; i++) {
 							System.out.println("Run: " + (i + 1));
-							double[][] performanceMeasures = testRun(trueChanges, trueChangesVirtualD,  1000);
+							double[][] performanceMeasures = testRun(trueChanges, trueChangesVirtualD, 1000);
 							for (int j = 0; j < 9; j++) {
 								scdSums[j] += performanceMeasures[0][j];
 								sccdSums[j] += performanceMeasures[1][j];
@@ -778,7 +785,7 @@ public class GaussianDriftTests {
 		}
 
 		// Write the results
-		String filePath = "D:/Informatik/MSc/IV/Masterarbeit Porto/Results/ConceptChangeDetection/Gaussian/Tests_new.txt";
+		String filePath = "results/Tests_new.txt";
 
 		try {
 			Files.write(Paths.get(filePath), results, StandardOpenOption.APPEND);
@@ -788,7 +795,12 @@ public class GaussianDriftTests {
 		}
 	}
 
-	private double[][] testRun(ArrayList<Double> trueChanges, ArrayList<Double> trueChangesVirtualDrift, int changeLength) {
+	private String fromClasspath(String filename) {
+		return "src/test/resources/ccd/" + filename;
+	}
+
+	private double[][] testRun(ArrayList<Double> trueChanges, ArrayList<Double> trueChangesVirtualDrift,
+			int changeLength) {
 		conceptDriftStream.restart();
 		scd.resetLearning();
 		sccd.resetLearning();
@@ -806,7 +818,7 @@ public class GaussianDriftTests {
 			Instance inst = conceptDriftStream.nextInstance();
 
 			if (numberSamples % 1000 == 0) {
-				//System.out.println(scd.getNumberOfElements());
+				// System.out.println(scd.getNumberOfElements());
 			}
 
 			// For accuracy
@@ -832,14 +844,14 @@ public class GaussianDriftTests {
 				// System.out.println("scd: WARNING at " + numberSamples);
 			} else if (scd.isChangeDetected()) {
 				scdDetectedChanges.add((double) numberSamples);
-				//System.out.println("scd: CHANGE at " + numberSamples);
+				// System.out.println("scd: CHANGE at " + numberSamples);
 			}
 
 			if (sccd.isWarningDetected()) {
 				// System.out.println("sccd: WARNING at " + numberSamples);
 			} else if (sccd.isChangeDetected()) {
 				sccdDetectedChanges.add((double) numberSamples);
-				//System.out.println("sccd: CHANGE at " + numberSamples);
+				// System.out.println("sccd: CHANGE at " + numberSamples);
 			}
 
 			if (refDetector.isWarningDetected()) {
@@ -904,7 +916,7 @@ public class GaussianDriftTests {
 					+ refSmoothedErrorRates[i]);
 		}
 
-		String filePath = "C:/Users/Vincent/Desktop/ErrorRates_Gaussian.csv";
+		String filePath = "results/ErrorRates_Gaussian.csv";
 
 		try {
 			Files.write(Paths.get(filePath), errorRatesList);
@@ -915,7 +927,7 @@ public class GaussianDriftTests {
 
 		return performanceMeasures;
 	}
-	
+
 	private SummarisationAdapter createSummarisationAdapter(StreamSummarisation ss) {
 		boolean addDescription = false;
 		if (summarisationDescription == null) {
@@ -931,8 +943,8 @@ public class GaussianDriftTests {
 			summarisationDescription = "ClusTree, horizon: " + horizon;
 			break;
 		case ADAPTINGCENTROIDS:
-			//double radius = 0.4 * Math.sqrt(numberOfDimensions) - 3.5;
-			//double radius = 1.5;
+			// double radius = 0.4 * Math.sqrt(numberOfDimensions) - 3.5;
+			// double radius = 1.5;
 			double learningRate = 1;
 			adapter = new MCAdapter(horizon, radius, learningRate, "adapting");
 			summarisationDescription = "Adapting centroids, horizon: " + horizon + ", radius: " + radius

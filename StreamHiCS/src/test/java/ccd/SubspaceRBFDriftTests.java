@@ -472,7 +472,7 @@ public class SubspaceRBFDriftTests {
 		}
 
 		// Write the results
-		String filePath = "D:/Informatik/MSc/IV/Masterarbeit Porto/Results/ConceptChangeDetection/SubspaceRBF/Tests.txt";
+		String filePath = "results/ConceptChangeDetection/SubspaceRBF/Tests.txt";
 
 		try {
 			Files.write(Paths.get(filePath), results, StandardOpenOption.APPEND);
@@ -640,7 +640,7 @@ public class SubspaceRBFDriftTests {
 					+ refSmoothedErrorRates[i]);
 		}
 
-		String filePath = "C:/Users/Vincent/Desktop/ErrorRates_SubspaceRBF.csv";
+		String filePath = "results/ErrorRates_SubspaceRBF.csv";
 
 		try {
 			Files.write(Paths.get(filePath), errorRatesList);

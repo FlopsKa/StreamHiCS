@@ -81,7 +81,7 @@ public class IntrusionDetection {
 	
 	@Test
 	public void testCorrBeforeAttacks() {
-		String path = "Tests/RealWorldData/kddcup99_10_percent_filtered.arff";
+		String path = "src/test/resources/ccd/RealWorldData/kddcup99_10_percent_filtered.arff";
 		String attacksPath = "Tests/RealWorldData/kddcup99_attackPeriods.txt";
 		// Class index is last attribute but not relevant for this task
 		ArffFileStream stream = new ArffFileStream(path, -1);
@@ -144,7 +144,7 @@ public class IntrusionDetection {
 			}
 			numberSamples++;
 		}
-		String filePath = "C:/Users/Vincent/Desktop/IntrusionDetection_numberElements.csv";
+		String filePath = "results/IntrusionDetection_numberElements.csv";
 
 		try {
 			Files.write(Paths.get(filePath), numberElements);
